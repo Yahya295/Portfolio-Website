@@ -1,0 +1,208 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Get in touch about a website, redesign, or web development project.">
+  <title>Contact &#8212; Yahya Sarkar, Web Developer</title>
+  <style>
+    :root { --paper:#f4f2eb; --ink:#20231f; --muted:#70756e; --line:#d9d9cf; --green:#c8f169; --deep:#183b32; --orange:#ee704b; --white:#fffefa; }
+    * { box-sizing:border-box; }
+    @keyframes enter { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fade-in { from { opacity:0; } to { opacity:1; } }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial, Helvetica, sans-serif; line-height:1.55; }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
+    .shell { width:min(1160px, calc(100% - 48px)); margin:0 auto; }
+    .site-header { min-height:82px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); animation:fade-in .6s ease both; }
+    .brand { font-size:15px; font-weight:800; letter-spacing:.08em; display:flex; gap:11px; align-items:center; }
+    .brand-role { font-weight:400; color:#777; }
+    .brand-mark { width:29px; height:29px; background:var(--green); border-radius:50% 50% 50% 8px; display:inline-block; }
+    nav { display:flex; align-items:center; gap:30px; font-size:13px; font-weight:700; }
+    nav a { color:#5e625d; } nav a:hover, nav a[aria-current="page"] { color:var(--ink); }
+    .nav-cta { padding:11px 17px; border:1px solid var(--ink); border-radius:99px; color:var(--ink); transition:background .2s, color .2s, transform .2s; }
+    .nav-cta:hover { background:var(--ink); color:var(--white); transform:translateY(-2px); }
+    .intro { padding:73px 0 43px; animation:enter .75s .08s ease both; }
+    .eyebrow { margin:0 0 17px; text-transform:uppercase; letter-spacing:.16em; font-size:11px; font-weight:800; color:#63725d; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { margin:0 0 18px; font-size:clamp(49px, 7vw, 82px); line-height:.96; letter-spacing:-.075em; }
+    h1 em { font-style:normal; color:#58834b; }
+    .intro p:last-child { max-width:580px; color:var(--muted); font-size:17px; margin-bottom:0; }
+    .contact-layout { display:grid; grid-template-columns:.72fr 1.28fr; gap:24px; padding-bottom:58px; }
+    .contact-card { background:var(--deep); color:var(--white); border-radius:7px; padding:31px; display:flex; flex-direction:column; animation:enter .7s ease both; transition:transform .22s ease, box-shadow .22s ease; }
+    .contact-card:hover { transform:translateY(-6px); box-shadow:0 14px 28px #20231f18; }
+    .contact-card .eyebrow { color:#bfd496; }
+    .contact-card h2 { font-size:29px; line-height:1.05; letter-spacing:-.05em; margin:0 0 16px; }
+    .contact-card > p { color:#c6d0c8; font-size:14px; }
+    .contact-item { margin-top:21px; padding-top:19px; border-top:1px solid #ffffff38; }
+    .contact-item span { display:block; margin-bottom:6px; color:#bfd496; font-size:10px; text-transform:uppercase; letter-spacing:.13em; font-weight:800; }
+    .contact-item a { font-size:15px; font-weight:700; overflow-wrap:anywhere; }
+    .contact-item a:hover { color:var(--green); }
+    .contact-card .note { font-size:12px; line-height:1.5; margin-top:auto; padding-top:32px; }
+    .form-card { padding:31px 34px 34px; background:var(--white); border:1px solid var(--line); border-radius:7px; animation:enter .75s .12s ease both; transition:transform .22s ease, box-shadow .22s ease; }
+    .form-card:hover { transform:translateY(-5px); box-shadow:0 14px 28px #20231f12; }
+    .form-card h2 { margin:0 0 6px; font-size:25px; letter-spacing:-.04em; }
+    .form-intro { margin:0 0 24px; color:var(--muted); font-size:13px; }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:17px; }
+    .field { display:flex; flex-direction:column; gap:7px; }
+    .field-wide { grid-column:1 / -1; }
+    label { font-size:12px; font-weight:800; }
+    input, select, textarea { width:100%; border:1px solid #d4d7cd; border-radius:4px; background:#fbfaf6; color:var(--ink); padding:12px 13px; font:14px Arial, Helvetica, sans-serif; transition:border-color .2s, background .2s, box-shadow .2s; }
+    input:focus, select:focus, textarea:focus { border-color:#78925d; background:#fff; box-shadow:0 0 0 3px #c8f16950; outline:none; }
+    input, select { min-height:45px; }
+    textarea { resize:vertical; min-height:132px; }
+    input::placeholder, textarea::placeholder { color:#9a9e96; }
+    .form-bottom { display:flex; align-items:center; justify-content:space-between; gap:17px; margin-top:20px; }
+    .form-bottom p { margin:0; max-width:300px; color:var(--muted); font-size:11px; }
+    .button { border:0; min-height:47px; padding:12px 19px; display:inline-flex; align-items:center; justify-content:center; gap:10px; white-space:nowrap; font-size:13px; font-weight:800; border-radius:99px; background:var(--ink); color:var(--white); cursor:pointer; transition:transform .2s, box-shadow .2s, background .2s; }
+    .button:hover { background:#3d4940; transform:translateY(-3px); box-shadow:0 8px 18px #20231f20; }
+    .prep { padding:0 0 82px; animation:enter .7s ease both; }
+    .prep-heading { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:24px; }
+    .prep-heading h2 { max-width:470px; margin:0; font-size:clamp(30px, 4vw, 43px); line-height:1; letter-spacing:-.06em; }
+    .prep-heading > p:last-child { max-width:340px; margin:0; color:var(--muted); font-size:13px; }
+    .prep-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .prep-card { min-height:162px; padding:23px; border:1px solid var(--line); border-radius:6px; background:#f8f7f1; animation:enter .65s ease both; transition:transform .22s ease, box-shadow .22s ease; }
+    .prep-card:nth-child(2) { animation-delay:.1s; } .prep-card:nth-child(3) { animation-delay:.2s; }
+    .prep-card:hover { transform:translateY(-7px); box-shadow:0 12px 24px #20231f14; }
+    .prep-card span { display:block; margin-bottom:23px; color:#64834d; font-size:11px; letter-spacing:.12em; font-weight:800; }
+    .prep-card h3 { margin:0 0 7px; font-size:16px; }
+    .prep-card p { margin:0; color:var(--muted); font-size:13px; }
+    .reply-plan { padding:0 0 82px; }
+    .reply-plan h2 { margin:0 0 22px; font-size:clamp(30px,4vw,43px); line-height:1; letter-spacing:-.06em; }
+    .reply-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .reply-card { padding:22px; border-top:2px solid var(--green); background:#fffefa; transition:transform .22s ease, box-shadow .22s ease; }
+    .reply-card:hover { transform:translateY(-7px); box-shadow:0 12px 24px #20231f14; }
+    .reply-card span { display:block; margin-bottom:18px; color:#64834d; font-size:10px; letter-spacing:.12em; font-weight:800; }
+    .reply-card h3 { margin:0 0 7px; font-size:16px; }
+    .reply-card p { margin:0; color:var(--muted); font-size:13px; }
+    .footer { padding:27px 0 34px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:12px; }
+    .footer strong { color:var(--ink); }
+    @media(max-width:760px) { .shell{width:min(100% - 34px,600px)}.site-header{min-height:72px}nav{gap:14px;font-size:12px}nav a:nth-child(2){display:none}.intro{padding:58px 0 32px}.contact-layout{grid-template-columns:1fr;padding-bottom:48px}.contact-card{min-height:330px}.form-card{padding:26px}.prep{padding-bottom:58px}.prep-heading{align-items:start;flex-direction:column}.prep-grid,.reply-grid{grid-template-columns:1fr}.prep-card{min-height:0}.reply-plan{padding-bottom:58px} }
+    @media(max-width:430px) { .brand{font-size:12px;gap:7px}.brand-mark{width:23px;height:23px}nav{gap:10px}nav a:nth-child(3){display:none}.nav-cta{padding:9px 12px}.form-grid{grid-template-columns:1fr}.field-wide{grid-column:auto}.form-bottom{align-items:start;flex-direction:column}.footer{flex-direction:column} }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; animation-delay:0s !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; } }
+    .scroll-progress { position:fixed; inset:0 auto auto 0; z-index:20; width:100%; height:3px; background:var(--green); transform:scaleX(0); transform-origin:left; pointer-events:none; }
+    [data-reveal] { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+    [data-reveal].is-visible { opacity:1; transform:translateY(0); }
+    [data-reveal][data-delay="1"] { transition-delay:.1s; } [data-reveal][data-delay="2"] { transition-delay:.2s; } [data-reveal][data-delay="3"] { transition-delay:.3s; }
+    .project, .project-note, .value-card, .fit-card, .service-card, .prep-card, .reply-card { --pointer-x:50%; --pointer-y:50%; background-image:radial-gradient(260px circle at var(--pointer-x) var(--pointer-y), rgba(200,241,105,.13), transparent 70%); }
+    @media (prefers-reduced-motion:reduce) { [data-reveal] { opacity:1; transform:none; transition:none; } }
+      :where(a, button, .project, .project-note, .value-card, .fit-card, .service-card, .prep-card, .reply-card, .about-point, .services-strip, .contact-card, .form-card) { transition-timing-function:cubic-bezier(.2,.7,.2,1); }
+    :root { --paper:#f7f6f0; --ink:#1c241f; --muted:#626a63; --line:#d8ddd2; }
+    body { font-size:16px; background:radial-gradient(ellipse at 84% 4%, rgba(200,241,105,.12), transparent 30%), var(--paper); }
+    .site-header { padding-inline:8px; }
+    .brand { font-size:16px; }
+    nav { font-size:14px; }
+    .eyebrow { font-size:12px; }
+    .button { font-size:14px; }
+    .footer { font-size:14px; }
+    .section-heading > p, .story-copy p, .story-card p, .value-card p, .collab-heading > p, .collab-card p,
+    .project-note p, .about-copy p, .about-point p, .services-strip p,
+    .contact-card > p, .contact-card .note, .contact-item a, .form-intro, .form-bottom p,
+    .prep-heading > p:last-child, .prep-card p, .reply-card p,
+    .service-card p, .included-intro, .deliverable, .fit-heading p, .fit-card p,
+    .process-heading p, .step p, .faq-list details p { font-size:16px; }
+    .intro-copy, .intro p:last-child, .hero-copy, .lead { font-size:18px; }
+    .contact-card h2 { font-size:32px; }
+    .form-card h2 { font-size:28px; }
+    label { font-size:14px; }
+    input, select, textarea { font-size:16px; }
+    .contact-item span, .prep-card span, .reply-card span, .value-card span,
+    .collab-card span, .fit-card span, .card-top, .service-card .tag,
+    .project-label, .project-note span, .about-point b, .step b { font-size:12px; }
+    .project-index { font-size:13px; }
+    .project-preview .tiny { font-size:10px; }
+    .project-preview p { font-size:12px; }
+    .preview-chip { font-size:10px; }
+    .ticker { font-size:12px; }
+    .services-strip span { font-size:11px; }
+    .services-strip a, .closing-note a { font-size:14px; }
+    .faq-list summary { font-size:17px; }
+    .project, .project-note, .value-card, .collab-card, .service-card, .fit-card,
+    .prep-card, .reply-card, .story-card, .services-strip, .cta, .contact-card, .form-card {
+      border-radius:12px;
+    }
+    .project-note, .value-card, .collab-card, .service-card, .fit-card, .prep-card, .reply-card, .form-card {
+      box-shadow:0 8px 24px rgba(32,35,31,.045);
+    }
+    .project:hover, .project-note:hover, .value-card:hover, .collab-card:hover,
+    .service-card:hover, .fit-card:hover, .prep-card:hover, .reply-card:hover, .form-card:hover {
+      box-shadow:0 16px 34px rgba(32,35,31,.11);
+    }
+    .hero-art { box-shadow:0 22px 48px rgba(24,59,50,.13); }
+    @media (max-width:760px) { nav { font-size:13px; } }
+    @media (max-width:430px) { .brand { font-size:13px; } }
+  </style>
+</head>
+<body>
+  <header class="shell site-header">
+    <a class="brand" href="home.html"><span class="brand-mark" aria-hidden="true"></span> YAHYA SARKAR <span class="brand-role">/ WEB DEVELOPER</span></a>
+    <nav aria-label="Main navigation"><a href="home.html">Work</a><a href="services.html">Services</a><a href="about.html">About</a><a class="nav-cta" href="contact.html" aria-current="page">Let&#8217;s talk <span aria-hidden="true">&#8599;</span></a></nav>
+  </header>
+  <main>
+    <section class="shell intro"><p class="eyebrow">The start of something good</p><h1>Let&#8217;s make your next <em>website.</em></h1><p>Tell me a little about what you&#8217;re working on. I&#8217;ll get back to you with a few questions and a clear idea of what the next step could be.</p></section>
+    <section class="shell contact-layout">
+      <aside class="contact-card"><p class="eyebrow">A good first step</p><h2>Tell me what you have in mind.</h2><p>Whether you&#8217;re starting from scratch or ready for a refresh, I&#8217;d love to hear about your goals, your people, and what you&#8217;d like your website to do.</p>
+        <div class="contact-item"><span>Email</span><a href="mailto:hello@yourdomain.com">hello@yourdomain.com&nbsp; &#8599;</a></div>
+        <div class="contact-item"><span>Typical reply time</span><a href="mailto:hello@yourdomain.com">Within two working days</a></div>
+        <p class="note">This is a sample portfolio contact address. Replace it with your own email before publishing.</p>
+      </aside>
+      <div class="form-card"><h2>Project enquiry</h2><p class="form-intro">A few details will help me get back to you with a useful reply.</p>
+        <form action="mailto:hello@yourdomain.com" method="post" enctype="text/plain">
+          <div class="form-grid">
+            <div class="field"><label for="name">Your name</label><input id="name" name="Name" type="text" autocomplete="name" placeholder="e.g. Sam Taylor" required></div>
+            <div class="field"><label for="email">Email address</label><input id="email" name="Email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+            <div class="field field-wide"><label for="service">What do you need?</label><select id="service" name="Service" required><option value="" selected disabled>Choose a service</option><option>New website</option><option>Website redesign</option><option>Ongoing support</option><option>Something else</option></select></div>
+            <div class="field field-wide"><label for="message">A little about your project</label><textarea id="message" name="Project details" placeholder="What are you hoping to build? Do you have a timeline in mind?" required></textarea></div>
+          </div>
+          <div class="form-bottom"><p>Submitting opens your email app with the enquiry details ready to send.</p><button class="button" type="submit">Send enquiry <span aria-hidden="true">&#8599;</span></button></div>
+        </form>
+      </div>
+    </section>
+    <section class="shell prep"><div class="prep-heading"><div><p class="eyebrow">No polished brief needed</p><h2>Three things to think about before we talk.</h2></div><p>Even a few rough notes can make the first conversation more useful. Bring whatever you have, and we can work out the rest together.</p></div><div class="prep-grid"><article class="prep-card"><span>01 / THE GOAL</span><h3>What should the site help you do?</h3><p>Share the main action you want visitors to take, or the thing they should understand first.</p></article><article class="prep-card"><span>02 / YOUR PEOPLE</span><h3>Who do you want to reach?</h3><p>Think about the customers, clients, or community you want the website to speak to.</p></article><article class="prep-card"><span>03 / THE DETAILS</span><h3>What do you already have?</h3><p>Existing text, photos, a logo, or a few favorite examples are all helpful starting points.</p></article></div></section>
+    <section class="shell reply-plan"><p class="eyebrow">After you reach out</p><h2>Here&#8217;s what happens next.</h2><div class="reply-grid"><article class="reply-card"><span>01 / A PERSONAL REPLY</span><h3>I&#8217;ll read your note</h3><p>I&#8217;ll review your goals and reply with any questions that will help clarify the project.</p></article><article class="reply-card"><span>02 / A CONVERSATION</span><h3>We&#8217;ll talk it through</h3><p>We can discuss priorities, timing, and what would make the site useful for your audience.</p></article><article class="reply-card"><span>03 / A CLEAR PLAN</span><h3>You&#8217;ll know the next step</h3><p>I&#8217;ll outline a practical direction so you can decide how you&#8217;d like to move forward.</p></article></div></section>
+  </main>
+  <footer class="shell footer"><span><strong>YAHYA SARKAR</strong> &#183; Independent web developer</span><span><a href="home.html">Work</a> &nbsp;&#183;&nbsp; <a href="about.html">About</a> &nbsp;&#183;&nbsp; <a href="services.html">Services&nbsp; &#8599;</a></span></footer>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const progress = document.querySelector('.scroll-progress');
+      const updateProgress = () => {
+        const distance = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.transform = `scaleX(${distance > 0 ? window.scrollY / distance : 0})`;
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      window.addEventListener('resize', updateProgress);
+      updateProgress();
+
+      const revealItems = document.querySelectorAll('main > section, main > div, .section-heading, .project, .project-note, .about-point, .services-strip, .value-card, .collab-card, .service-card, .fit-card, .process-step, .deliverable, .faq-item, .contact-card, .form-card, .prep-card, .reply-card');
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+        revealItems.forEach((item, index) => {
+          item.dataset.reveal = '';
+          if (item.matches('.project, .project-note, .value-card, .collab-card, .service-card, .fit-card, .process-step, .deliverable, .faq-item, .prep-card, .reply-card')) item.dataset.delay = String((index % 3) + 1);
+          observer.observe(item);
+        });
+      }
+
+      document.querySelectorAll('.project, .project-note, .value-card, .fit-card, .service-card, .prep-card, .reply-card').forEach(card => {
+        card.addEventListener('pointermove', event => {
+          const bounds = card.getBoundingClientRect();
+          card.style.setProperty('--pointer-x', `${event.clientX - bounds.left}px`);
+          card.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`);
+        });
+        card.addEventListener('pointerleave', () => {
+          card.style.setProperty('--pointer-x', '50%');
+          card.style.setProperty('--pointer-y', '50%');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
